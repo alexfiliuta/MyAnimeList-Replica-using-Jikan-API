@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom";
+import Style from "./Modules/Anime.module.css";
 
 function Anime() {
     
@@ -34,14 +35,14 @@ function Anime() {
     }, [])
 
     return (
-        <div className="anime_page">
+        <div className={Style.animePage}>
             
             <h1>{title}</h1>
 
-            <div className="details">
-                <div className="detail">
-                    <div className="image"><img src={images?.jpg.large_image_url} alt=""></img></div>
-                    <div className="anime-details">
+            <div className={Style.details}>
+                <div className={Style.detail}>
+                    <div className={Style.image}><img src={images?.jpg.large_image_url} alt=""></img></div>
+                    <div className={Style.animeDetails}>
                         <p><span>Aired:</span><span>{aired?.string}</span></p>
                         <p><span>Rating:</span><span>{rating}</span></p>
                         <p><span>Rank:</span><span>{rank}</span></p>
@@ -54,7 +55,7 @@ function Anime() {
                         <p><span>Duration:</span><span>{duration}</span></p>
                     </div>
                 </div>
-                <p className="description">
+                <p className={Style.description}>
                     {showMore ? synopsis : synopsis?.substring(0, 250) + "..."}
                     <button onClick={() => {
                         setShowMore(!showMore)
@@ -62,9 +63,9 @@ function Anime() {
                 </p>
             </div>
 
-            <h3 className="title">Trailer</h3>
+            <h3 className={Style.title}>Trailer</h3>
 
-            <div className="trailer-content">
+            <div className={Style.trailerContent}>
                 {trailer?.embed_url ? <iframe
                     src = {trailer?.embed_url} 
                     title="Inline Frame Example"
@@ -77,9 +78,9 @@ function Anime() {
                 }
             </div>
 
-            <h3 className="title">Characters</h3>
+            <h3 className={Style.title}>Characters</h3>
 
-            <div className="characters">
+            <div className={Style.characters}>
                 {characters?.map((character, index) => {
                     const role = character.role;
                     const images = character.character.images;
@@ -87,7 +88,7 @@ function Anime() {
                     const mal_id = character.character.mal_id;
                     return(
                         <Link to={`/character/${mal_id}`} key={index}>
-                            <div className="character">
+                            <div className={Style.character}>
                                 <img src={images?.jpg.image_url} alt=""></img>
                                 <h4>{name}</h4>
                                 <p>{role}</p>
