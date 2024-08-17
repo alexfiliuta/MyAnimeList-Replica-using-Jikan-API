@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/global";
 import Sidebar from "./Sidebar";
+import Style from "./Modules/Airing.module.css"
 
 function Airing({rendered}){
     const {airingAnime, isSearch, searchResults} = useGlobalContext()
@@ -23,8 +24,8 @@ function Airing({rendered}){
     }
 
     return (
-        <div className="popular-page">
-            <div className="airing-anime">
+        <div className={Style.popularPage}>
+            <div className={Style.airingAnime}>
                 {conditionalRender()}
             </div>
             <Sidebar></Sidebar>
