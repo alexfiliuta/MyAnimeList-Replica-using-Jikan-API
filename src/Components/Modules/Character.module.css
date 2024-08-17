@@ -1,0 +1,71 @@
+.characterPage {
+    background-color: #ededed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+    .back a {
+        font-weight: 600;
+        text-decoration: none;
+        color: #EB5757;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+.bigImage {
+    display: inline-block;
+    padding: 2rem;
+    margin: 2rem 0;
+    background-color: #fff;
+    border-radius: 7px;
+    border: 5px solid #e5e7eb;
+    position: relative;
+}
+    .bigImage img {
+        width: 350px;
+    }
+
+.smallImages {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+    padding: 2rem;
+    border-radius: 7px;
+    background-color: #fff;
+    border: 5px solid #e5e7eb;
+}
+    .smallImages img {
+        width: 6rem;
+        height: 6rem;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 3px solid #e5e7eb;
+    }
+
+.image-tap {
+    transition: all .3s ease-in-out;
+}
+
+#level .equal {
+    border: 2px solid #27ae5f94;
+    filter: grayscale(0);
+    transform: scale(1.2);
+}
+
+#level .notEqual {
+    border: 2px solid #e5e7eb;
+    filter: grayscale(60%);
+    transform: scale(1);
+}

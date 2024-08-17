@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useGlobalContext } from "../Context/global";
 import { Link, useParams } from "react-router-dom";
+import Style from "./Modules/Character.module.css";
 
 function Character() {
     const {getAnimePictures, pictures} = useGlobalContext();
@@ -17,19 +18,18 @@ function Character() {
     }, [id]);
 
     return(
-        <div className="character-page">
-            <div className="back">
+        <div className={Style.characterPage}>
+            <div className={Style.back}>
                 <Link to="/"><i className="fas fa=arrow-left"></i>Back To Home</Link>
             </div>
-            <div className="big-image">
+            <div className={Style.bigImage}>
                 <img src={pictures[index]?.jpg.image_url} alt=""></img>
             </div>
-            <div className="small-images">
+            <div className={Style.smallImages}>
                 {pictures?.map((picture, i) => {
-                    return <div className="image-con" onClick={()=> {
-                        handleImageClick(i);
+                    return <div id={Style.level}  onClick={()=> { handleImageClick(i);
                     }} key={i}>
-                        <img className={`image-tap ${i === index ? 'equal' : 'notEqual' }`} src={picture?.jpg.image_url}/>
+                        <img className={`${Style.image_tap} ${i === index ? Style.equal : Style.notEqual}`} src={picture?.jpg.image_url}/>
                     </div>
                 })}
             </div>
