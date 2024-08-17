@@ -20,7 +20,7 @@ function Character() {
     return(
         <div className={Style.characterPage}>
             <div className={Style.back}>
-                <Link to="/"><i className="fas fa=arrow-left"></i>Back To Home</Link>
+                <Link to="/"><i className="fas fa-arrow-left"></i>Back To Home</Link>
             </div>
             <div className={Style.bigImage}>
                 <img src={pictures[index]?.jpg.image_url} alt=""></img>

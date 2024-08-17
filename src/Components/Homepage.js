@@ -3,6 +3,7 @@ import Popular from "./Popular";
 import Upcoming from "./Upcoming";
 import Airing from "./Airing";
 import { useGlobalContext } from "../Context/global";
+import Style from "./Modules/Homepage.module.css"
 
 function Homepage() {
 
@@ -32,34 +33,34 @@ function Homepage() {
     }
 
     return(
-        <div className="home">
+        <div className={Style.home}>
             <header>
-                <div className="logo">
+                <div className={Style.logo}>
                     <h1>
                         {rendered === 'popular' ? 'Popular Anime' : 
                         ( rendered === 'airing' ? 'Airing Anime' : 'Upcoming Anime')}
                     </h1>
                 </div>
-                <div className="search-container">
-                    <div className="filter-btn popular-filter">
-                        <button onClick={() => {
+                <div className={Style.searchContainer}>
+                    <div>
+                        <button className={Style.filterBtn} onClick={() => {
                             setRendered('popular')
                         }}>Popular<i className="fas fa-fire"></i></button>
                     </div>
-                    <form action="" className="search-form" onSubmit={handleSubmit}>
-                        <div className="input-control">
+                    <form action="" className={Style.searchForm} onSubmit={handleSubmit}>
+                        <div className={Style.inputControl}>
                             <input type="text" placeholder="Search Anime" value={search} onChange={handleChange}></input>
-                            <button type="submit">Search</button>
+                            <button className={Style.filterBtn} type="submit">Search</button>
                         </div>
                     </form>
-                    <div className="filter-btn airing-filter">
-                        <button onClick={() =>{
+                    <div>
+                        <button className={Style.filterBtn} onClick={() =>{
                             setRendered('airing');
                             getAiringAnime();
                         }}>Airing</button>
                     </div>
-                    <div className="filter-btn upcoming-filter">
-                        <button onClick={() => {
+                    <div>
+                        <button className={Style.filterBtn} onClick={() => {
                             setRendered('upcoming');
                             getUpcomingAnime();
                         }}>Upcoming</button>
