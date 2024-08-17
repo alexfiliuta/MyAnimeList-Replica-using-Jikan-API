@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/global";
+import Sidebar from "./Sidebar";
 
 function Popular({rendered}){
     const {popularAnime, isSearch, searchResults} = useGlobalContext()
@@ -26,6 +27,7 @@ function Popular({rendered}){
             <div className="popular-anime">
                 {conditionalRender()}
             </div>
+            <Sidebar></Sidebar>
         </div>
     )
 }

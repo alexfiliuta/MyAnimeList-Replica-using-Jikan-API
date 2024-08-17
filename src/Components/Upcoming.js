@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../Context/global";
+import Sidebar from "./Sidebar";
 
 function Upcoming({rendered}){
     const {upcomingAnime, isSearch, searchResults} = useGlobalContext()
@@ -26,6 +27,7 @@ function Upcoming({rendered}){
             <div className="airing-anime">
                 {conditionalRender()}
             </div>
+            <Sidebar></Sidebar>
         </div>
     )
 }
