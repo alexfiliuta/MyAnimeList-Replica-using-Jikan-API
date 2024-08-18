@@ -1,6 +1,45 @@
-# Getting Started with Create React App
+# MyAnimeList Replica
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project is a replica (although not similar) of MyAnimeList, a popular anime database and community website. It utilizes the Jikan API to fetch anime data and is built using React.
+
+## Features
+
+- **Browse Popular, Airing, and Upcoming Anime**: Users can view lists of anime categorized into popular, airing, and upcoming.
+- **Detailed Anime Information**: Each anime page provides detailed information such as synopsis, rating, score, trailer and characters.
+- **Character Details**: Users can click on characters to see more detailed information and pictures.
+- **Responsive Search**: The application includes a search function that allows users to search for anime based on titles.
+
+## Technologies Used
+
+- **React**: For building the user interface.
+- **React Router**: For navigation within the application.
+- **Jikan API**: Used for data state management across the application.
+- **CSS**: For styling.
+
+## Setup
+
+First, clone the repository on your local machine:
+
+```bash
+git clone https://github.com/alexfiliuta/MyAnimeList-Replica-using-Jikan-API.git
+cd myAnimeList-Replica-using-Jikan-API
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+The application will open in your default browser at `http://localhost:3000`.
 
 ## Available Scripts
 
@@ -44,27 +83,3 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

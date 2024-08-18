@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Style from "./Modules/Character.module.css";
 
 function Character() {
-    const {getAnimePictures, pictures} = useGlobalContext();
+    const {getAnimePictures, pictures, animeId} = useGlobalContext();
     const {id} = useParams();
 
     const [index, setIndex] = useState(0);
@@ -20,7 +20,8 @@ function Character() {
     return(
         <div className={Style.characterPage}>
             <div className={Style.back}>
-                <Link to="/"><i className="fas fa-arrow-left"></i>Back To Home</Link>
+                <Link to="/"><i className="fas fa-arrow-left"></i>Back To Home</Link><br />
+                <Link to={`/anime/${animeId}`}><i className="fas fa-arrow-left"></i>Back To Anime Page</Link>
             </div>
             <div className={Style.bigImage}>
                 <img src={pictures[index]?.jpg.image_url} alt=""></img>

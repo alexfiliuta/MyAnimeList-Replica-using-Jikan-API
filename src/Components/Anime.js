@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {Link, useParams} from "react-router-dom";
+import { useGlobalContext } from "../Context/global";
 import Style from "./Modules/Anime.module.css";
 
 function Anime() {
     
     const {id} = useParams();
+    const {setAnimeId} = useGlobalContext();
 
     const [anime, setAnime] = useState({});
     const [characters, setCharacters] = useState([]);
@@ -32,10 +34,14 @@ function Anime() {
     useEffect(()=> {
         getAnime(id);
         getCharacters(id);
+        setAnimeId(id);
     }, [])
 
     return (
         <div className={Style.animePage}>
+            <div className={Style.back}>
+            <Link to="/"><i className="fas fa-arrow-left"></i>Back To Home</Link><br />
+            </div>
             
             <h1>{title}</h1>
 

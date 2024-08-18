@@ -17,6 +17,20 @@
         transform: skew(-3deg);
     }
 
+.back {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+    .back a {
+        font-weight: 600;
+        text-decoration: none;
+        color: #EB5757;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
 .title {
     display: inline-block;
     margin: 3rem 0;

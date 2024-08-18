@@ -4,17 +4,20 @@ import Upcoming from "./Upcoming";
 import Airing from "./Airing";
 import { useGlobalContext } from "../Context/global";
 import Style from "./Modules/Homepage.module.css"
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 function Homepage() {
 
     const {
         handleSubmit,
         search,
-        searchAnime,
+        clearInput,
         handleChange,
         getUpcomingAnime,
         getAiringAnime,
         getPopularAnime,
+        isSearch,
+        searchResults,
     } = useGlobalContext();
 
     const [rendered, setRendered] = useState('popular');
@@ -37,14 +40,16 @@ function Homepage() {
             <header>
                 <div className={Style.logo}>
                     <h1>
-                        {rendered === 'popular' ? 'Popular Anime' : 
+                        {isSearch ? ` ${searchResults.length} results found` :
+                        rendered === 'popular' ? 'Popular Anime' : 
                         ( rendered === 'airing' ? 'Airing Anime' : 'Upcoming Anime')}
                     </h1>
                 </div>
                 <div className={Style.searchContainer}>
                     <div>
                         <button className={Style.filterBtn} onClick={() => {
-                            setRendered('popular')
+                            setRendered('popular');
+                            clearInput();
                         }}>Popular<i className="fas fa-fire"></i></button>
                     </div>
                     <form action="" className={Style.searchForm} onSubmit={handleSubmit}>
@@ -57,12 +62,14 @@ function Homepage() {
                         <button className={Style.filterBtn} onClick={() =>{
                             setRendered('airing');
                             getAiringAnime();
+                            clearInput();
                         }}>Airing</button>
                     </div>
                     <div>
                         <button className={Style.filterBtn} onClick={() => {
                             setRendered('upcoming');
                             getUpcomingAnime();
+                            clearInput();
                         }}>Upcoming</button>
                     </div>
                 </div>

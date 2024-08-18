@@ -10,6 +10,7 @@ const GET_POPULAR_ANIME = "GET_POPULAR_ANIME";
 const GET_UPCOMING_ANIME = "GET_UPCOMING_ANIME";
 const GET_AIRING_ANIME = "GET_AIRING_ANIME";
 const GET_PICTURES = "GET_PICTURES";
+const SET_ANIME_ID = "SET_ANIME_ID";
 
 function reducer(state, action){
     switch(action.type){
@@ -25,6 +26,8 @@ function reducer(state, action){
             return {...state, airingAnime: action.payload, loading: false}
         case GET_PICTURES:
             return {...state, pictures: action.payload, loading: false}
+        case SET_ANIME_ID:
+            return {...state, animeId: action.payload};
         default:
             return state;    
     }
@@ -39,6 +42,7 @@ export const GlobalContextProvider = ({children}) => {
         isSearch: false,
         searchResults: [],
         loading: false,
+        animeId: null,
     }
 
     const [state, dispatch] = useReducer(reducer, initialState);
@@ -49,6 +53,11 @@ export const GlobalContextProvider = ({children}) => {
         if(e.target.value === ''){
             state.isSearch = false;
         }
+    }
+
+    function clearInput() {
+        setSearch('');
+        state.isSearch = false;
     }
 
     function handleSubmit(e) {
@@ -96,7 +105,10 @@ export const GlobalContextProvider = ({children}) => {
         const data = await response.json();
         dispatch({type: GET_PICTURES, payload: data.data})
     }
-
+    const setAnimeId = (id) => {
+        dispatch({type: SET_ANIME_ID, payload: id});
+    }
+    
     //initial render
     useEffect(() => {
         getPopularAnime();
@@ -106,13 +118,15 @@ export const GlobalContextProvider = ({children}) => {
         <GlobalContext.Provider value={{
             ...state,
             search,
+            clearInput,
             handleChange,
             handleSubmit,
             searchAnime,
             getPopularAnime,
             getUpcomingAnime,
             getAiringAnime,
-            getAnimePictures
+            getAnimePictures,
+            setAnimeId,
         }}>
             {children}
         </GlobalContext.Provider>
