@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/MyAnimeList-Replica-using-Jikan-API/static/css/main.29e3fef4.css",
-    "main.js": "/MyAnimeList-Replica-using-Jikan-API/static/js/main.fadddc91.js",
+    "main.js": "/MyAnimeList-Replica-using-Jikan-API/static/js/main.e642eaeb.js",
     "index.html": "/MyAnimeList-Replica-using-Jikan-API/index.html",
     "main.29e3fef4.css.map": "/MyAnimeList-Replica-using-Jikan-API/static/css/main.29e3fef4.css.map",
-    "main.fadddc91.js.map": "/MyAnimeList-Replica-using-Jikan-API/static/js/main.fadddc91.js.map"
+    "main.e642eaeb.js.map": "/MyAnimeList-Replica-using-Jikan-API/static/js/main.e642eaeb.js.map"
   },
   "entrypoints": [
     "static/css/main.29e3fef4.css",
-    "static/js/main.fadddc91.js"
+    "static/js/main.e642eaeb.js"
   ]
 }
